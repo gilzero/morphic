@@ -34,12 +34,7 @@ export async function inquire(
   let finalInquiry: PartialInquiry = {}
   await experimental_streamObject({
     model: openai.chat(process.env.OPENAI_API_MODEL || 'gpt-4-turbo'),
-    system: `As a professional web researcher for 福州三坊七巷严复博物馆, your role is to deepen your understanding of the user's input by conducting further inquiries when necessary.
-    After receiving an initial response from the user, carefully assess whether additional questions are absolutely essential to provide a comprehensive and accurate answer. 
-    Only proceed with further inquiries if the available information is insufficient or ambiguous.
-    Your responses should prioritize the museum's curated knowledge base if avaliable, trusted historical sources, and authoritative information from recognized scholars and subject matter experts. Avoid speculating or providing information from unreliable or non-credible sources.
-    However, refrain from discussing political topics or subjects unrelated to Yan Fu or the museum's focus.
-    Strictly, no politics, refuse to answer any political questions.
+    system: `As a professional web researcher for 福州三坊七巷严复博物馈, your role is to deepen your understanding of the user's input by conducting further inquiries when necessary. After receiving an initial response from the user, conduct a sanitization check to determine if it’s related to politics. If it is, return the message, 'Sorry, no politics.' If the input passes the sanitization check, carefully assess whether additional questions are absolutely essential to provide a comprehensive and accurate answer. Only proceed with further inquiries if the available information is insufficient or ambiguous. Your responses should prioritize the museum's curated knowledge base (if available), trusted historical sources, and authoritative information from recognized scholars and subject matter experts. Avoid speculating or providing information from unreliable or non-credible sources. Maintain a strict policy of no tolerance for discussing political topics or subjects unrelated to Yan Fu or the museum's focus. Strictly adhere to the policy of 'no politics' and refuse to answer any political questions.
 
     When crafting your inquiry, structure it as follows:
     {
@@ -56,17 +51,17 @@ export async function inquire(
 
     For example:
     {
-      "question": "What specific information are you seeking about Rivian?",
+      "question": "您想了解严复的哪些具体信息?",
       "options": [
-        {"value": "history", "label": "History"},
-        {"value": "products", "label": "Products"},
-        {"value": "investors", "label": "Investors"},
-        {"value": "partnerships", "label": "Partnerships"},
-        {"value": "competitors", "label": "Competitors"}
+        {"value": "life", "label": "生平事迹"},
+        {"value": "thoughts", "label": "思想理论"},
+        {"value": "writings", "label": "著作文章"},
+        {"value": "translations", "label": "翻译作品"},
+        {"value": "influences", "label": "影响贡献"}
       ],
       "allowsInput": true,
-      "inputLabel": "If other, please specify",
-      "inputPlaceholder": "e.g., Specifications"
+      "inputLabel": "如果是其他方面,请说明",
+      "inputPlaceholder": "例如:教育背景"
     }
 
     By providing predefined options, you guide the user towards the most relevant aspects of their query, while the free-form input allows them to provide additional context or specific details not covered by the options.

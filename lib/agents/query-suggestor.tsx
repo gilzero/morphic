@@ -52,7 +52,7 @@ export async function querySuggestor(
     Aim to create queries that progressively delve into more specific aspects, implications, or adjacent topics related to the initial query. 
     The goal is to anticipate the user's potential information needs and guide them towards a more comprehensive understanding of the subject matter.
     Remember, refrain from queries on political topics or subjects unrelated to Yan Fu or the museum's focus.
-    Please always respond in Simplified Chinese language and remember no politics`,
+    Please always respond in Simplified Chinese language and remember no politics.`,
     messages,
     schema: relatedSchema
   })

@@ -65,7 +65,7 @@ export const SearchResultsImageSection: React.FC<
   }, [api, selectedIndex])
 
   if (!images || images.length === 0) {
-    return <div className="text-muted-foreground">No images found</div>
+    return <div className="text-muted-foreground">没有找到图片</div>
   }
 
   return (
@@ -102,7 +102,7 @@ export const SearchResultsImageSection: React.FC<
           </DialogTrigger>
           <DialogContent className="sm:max-w-3xl max-h-[80vh] overflow-auto">
             <DialogHeader>
-              <DialogTitle>Search Images</DialogTitle>
+              <DialogTitle>搜索图片</DialogTitle>
               <DialogDescription className="text-sm">{query}</DialogDescription>
             </DialogHeader>
             <div className="py-4">
