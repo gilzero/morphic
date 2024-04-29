@@ -1,3 +1,10 @@
+/**
+ * This is a configuration file for Tailwind CSS, a utility-first CSS framework.
+ * It customizes various aspects of Tailwind's default configuration, including colors, fonts, breakpoints, and more.
+ * It also enables dark mode by class and specifies the paths to content files.
+ * Additionally, it adds a prefix to all of Tailwind's generated utility classes and includes plugins for additional utilities, components, or base styles.
+ */
+// filepath: tailwind.config.ts
 import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme");
 

@@ -1,3 +1,11 @@
+/**
+ * This file defines the chat messages display for the application.
+ *
+ * It exports a `ChatMessages` component that retrieves the current state of messages using `useUIState` and returns a JSX element representing the chat messages.
+ * Each message is wrapped in a `CollapsibleMessage` component, which could be responsible for displaying the message and handling its collapsed state.
+ *
+ * @module components/chat-messages
+ */
 'use client'
 
 import React from 'react'
@@ -12,7 +20,7 @@ export const Header: React.FC = () => {
       <div className="p-2">
         <a href="/">
           <IconLogo className={cn('w-5 h-5')} />
-          <span className="sr-only">Morphic</span>
+          <span className="sr-only">福州三坊七巷严复博物馆</span>
         </a>
       </div>
       <ModeToggle />

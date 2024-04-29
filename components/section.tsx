@@ -1,3 +1,11 @@
+/**
+ * This file defines a `Section` component for the application.
+ *
+ * The `Section` component is used to create a section in the user interface, with an optional title and icon.
+ * The icon is determined by the title. The size of the section and whether a separator is displayed before the section can also be customized.
+ *
+ * @module components/section
+ */
 'use client'
 
 import { cn } from '@/lib/utils'

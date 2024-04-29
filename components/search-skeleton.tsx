@@ -1,3 +1,11 @@
+/**
+ * This file defines a loading skeleton for the search results in the application.
+ *
+ * It exports a `SearchSkeleton` component that displays a placeholder while the search results are being loaded.
+ * This gives the user a visual indication that content is being loaded.
+ *
+ * @module components/search-skeleton
+ */
 'use client'
 
 import React from 'react'

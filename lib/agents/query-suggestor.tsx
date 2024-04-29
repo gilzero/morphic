@@ -1,3 +1,16 @@
+// filepath: lib/agents/query-suggestor.tsx
+/**
+ * This file defines a `querySuggestor` function for the application.
+ *
+ * The `querySuggestor` function is used to suggest related queries based on the user's input using the OpenAI SDK.
+ * It takes a `uiStream` and `messages` as parameters.
+ *
+ * The function appends a `Section` component to the `uiStream`, passing in a `SearchRelated` component with a streamable value of `PartialRelated` as a prop.
+ * It then streams an object using the `experimental_streamObject` method from the OpenAI SDK, iterating over the stream of partial objects,
+ * updating the `objectStream` with each object. Once the stream is done, the function returns.
+ *
+ * @module lib/agents/query-suggestor
+ */
 import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import { ExperimentalMessage, experimental_streamObject } from 'ai'
 import { PartialRelated, relatedSchema } from '@/lib/schema/related'
@@ -23,7 +36,8 @@ export async function querySuggestor(
 
   await experimental_streamObject({
     model: openai.chat(process.env.OPENAI_API_MODEL || 'gpt-4-turbo'),
-    system: `As a professional web researcher, your task is to generate a set of three queries that explore the subject matter more deeply, building upon the initial query and the information uncovered in its search results.
+    system: `As a professional web researcher for 福州三坊七巷严复博物馆, your task is to generate a set of three queries that explore the subject matter more deeply, building upon the initial query and the information uncovered in its search results.
+    Strictly, no politics, refuse to answer any political questions, and avoid discussing political topics or subjects unrelated to Yan Fu or the museum's focus.
 
     For instance, if the original query was "Starship's third test flight key milestones", your output should follow this format:
 
@@ -35,8 +49,10 @@ export async function querySuggestor(
       ]
     }"
 
-    Aim to create queries that progressively delve into more specific aspects, implications, or adjacent topics related to the initial query. The goal is to anticipate the user's potential information needs and guide them towards a more comprehensive understanding of the subject matter.
-    Please match the language of the response to the user's language.`,
+    Aim to create queries that progressively delve into more specific aspects, implications, or adjacent topics related to the initial query. 
+    The goal is to anticipate the user's potential information needs and guide them towards a more comprehensive understanding of the subject matter.
+    Remember, refrain from queries on political topics or subjects unrelated to Yan Fu or the museum's focus.
+    Please always respond in Simplified Chinese language and remember no politics`,
     messages,
     schema: relatedSchema
   })

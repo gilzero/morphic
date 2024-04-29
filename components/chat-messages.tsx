@@ -1,3 +1,4 @@
+// filepath: components/chat-messages.tsx
 import { StreamableValue, useUIState } from 'ai/rsc'
 import type { AI } from '@/app/action'
 import { CollapsibleMessage } from './collapsible-message'

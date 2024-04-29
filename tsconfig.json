@@ -1,3 +1,11 @@
+/**
+ * TypeScript configuration file (`tsconfig.json`).
+ *
+ * This file specifies the compiler options and the files that should be included and excluded when the TypeScript compiler runs.
+ * It includes options for library files to be included in the compilation, allowing JavaScript files to be compiled, skipping type checking of declaration files, enabling all strict type checking options, not emitting outputs, enabling emit interoperability between CommonJS and ES Modules, specifying the module system for the project, determining how modules get resolved, including modules imported with '.json' extension, ensuring that each file can be transpiled independently, specifying JSX code generation, enabling incremental compilation, listing of language service plugins, a series of entries which re-map imports to lookup locations relative to the 'baseUrl', and instructing the compiler to include and exclude certain files in the compilation process.
+ *
+ * @file tsconfig.json
+ */
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],

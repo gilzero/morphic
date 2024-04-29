@@ -1,3 +1,15 @@
+/* filepath: app/globals.css */
+/**
+ * This file defines global styles for the application using Tailwind CSS and CSS custom properties.
+ *
+ * It includes definitions for a set of color schemes and a border radius that are used throughout the application.
+ * Each color scheme has a corresponding foreground color.
+ *
+ * The `.dark` class provides a dark theme by redefining the color variables.
+ * The `body` class applies the background and text color to the body of the document.
+ *
+ * @file app/globals.css
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

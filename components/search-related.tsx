@@ -1,3 +1,11 @@
+/**
+ * This file defines a search-related component for the application.
+ *
+ * It exports a `SearchRelated` component that manages the state of related search queries and handles the submission of new search queries.
+ * It also provides functionality to display related search queries and submit a new search query when a related query is clicked.
+ *
+ * @module components/search-related
+ */
 'use client'
 
 import React from 'react'

@@ -1,3 +1,12 @@
+/**
+ * This file defines a search results display for images in the application.
+ *
+ * It exports a `SearchResultsImageSection` component that manages the state of the carousel and the selected index.
+ * It also provides functionality to display a subset of the image search results and a dialog to view more results.
+ * When an image is clicked, a dialog with a carousel of all images is displayed.
+ *
+ * @module components/search-results-image
+ */
 /* eslint-disable @next/next/no-img-element */
 'use client'
 

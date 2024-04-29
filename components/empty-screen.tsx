@@ -1,22 +1,32 @@
+/**
+ * This file defines an empty screen for the application.
+ *
+ * It exports an `EmptyScreen` component that takes a `submitMessage` function and an optional `className` as props and returns a JSX element representing an empty screen.
+ * The screen displays a list of example messages, each of which is a button. When a button is clicked, the `submitMessage` function is called with the message as an argument.
+ *
+ * The `exampleMessages` constant is defined to hold the example messages that are displayed on the screen.
+ *
+ * @module components/empty-screen
+ */
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: 'Why is Nvidia growing rapidly?',
-    message: 'Why is Nvidia growing rapidly?'
+    heading: '严复博物馆是什么？严复是谁？',
+    message: '严复博物馆是什么？严复是谁？'
   },
   {
-    heading: 'Is the Apple Vision Pro worth buying?',
-    message: 'Is the Apple Vision Pro worth buying?'
+    heading: '福州三坊七巷严复博物馆有什么?',
+    message: '福州三坊七巷严复博物馆有什么?'
   },
   {
-    heading: 'How does the Vercel AI SDK work?',
-    message: 'How does the Vercel AI SDK work?'
+    heading: '严复在中国近代教育史上有哪些影响?',
+    message: '严复在中国近代教育史上有哪些影响?'
   },
   {
-    heading: 'Tesla vs Rivian',
-    message: 'Tesla vs Rivian'
+    heading: '严复翻译了哪些作品?',
+    message: '严复翻译了哪些作品?'
   }
 ]
 export function EmptyScreen({

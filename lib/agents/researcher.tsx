@@ -1,3 +1,15 @@
+// filepath: lib/agents/researcher.tsx
+/**
+ * This file defines a `researcher` function for the application.
+ *
+ * The `researcher` function is used to conduct research or data gathering operations using the OpenAI SDK.
+ * It takes a `uiStream`, `streamText`, `messages`, and `useSpecificModel` as parameters, and returns an object containing the result, the full response, a flag indicating if an error occurred, and the tool responses.
+ *
+ * The function calls the `experimental_streamText` method from the OpenAI SDK, passing in a model, a system message, the messages, and a set of tools. The tools include a `search` tool that executes a search operation based on the provided parameters.
+ * It then iterates over the stream of results from the `experimental_streamText` method, updating the `streamText` and `fullResponse` with each result. Once the stream is done, the function returns.
+ *
+ * @module lib/agents/researcher
+ */
 import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import {
   ExperimentalMessage,
@@ -45,7 +57,7 @@ export async function researcher(
     If there are any images relevant to your answer, be sure to include them as well.
     Aim to directly address the user's question, augmenting your response with insights gleaned from the search results.
     Whenever quoting or referencing information from a specific URL, always cite the source URL explicitly.
-    Please match the language of the response to the user's language.`,
+    Please always respond in Simplified Chinese language and remember no politics. `,
     messages,
     tools: {
       search: {

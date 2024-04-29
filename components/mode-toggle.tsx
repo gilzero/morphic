@@ -1,3 +1,11 @@
+/**
+ * This file defines a theme mode toggle for the application.
+ *
+ * It exports a `ModeToggle` component that manages the theme mode of your application and provides a dropdown menu to switch between light, dark, and system themes.
+ * It uses the `useTheme` hook from 'next-themes' to get the `setTheme` function, which is used to change the theme when a menu item is clicked.
+ *
+ * @module components/mode-toggle
+ */
 'use client'
 
 import * as React from 'react'

@@ -1,3 +1,11 @@
+/**
+ * This file defines a search section for the application.
+ *
+ * It exports a `SearchSection` component that manages the state of the search results, including images and other results.
+ * It also provides functionality to display a loading skeleton when the search results are pending, and to display the search results when they are available.
+ *
+ * @module components/search-section
+ */
 'use client'
 
 import { SearchResults } from './search-results'

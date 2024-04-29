@@ -1,3 +1,12 @@
+// filepath: components/chat-panel.tsx
+/**
+ * This file defines the chat panel for the application.
+ *
+ * It exports a `ChatPanel` component that manages the state of the chat input and messages, handles the submission of new messages, and controls the display of the chat panel.
+ * It also provides functionality to clear the chat messages and focus on the input field.
+ *
+ * @module components/chat-panel
+ */
 import { useEffect, useState, useRef } from 'react'
 import type { AI } from '@/app/action'
 import { useUIState, useActions, useAIState } from 'ai/rsc'
@@ -93,7 +102,7 @@ export function ChatPanel() {
             ref={inputRef}
             type="text"
             name="input"
-            placeholder="Ask a question..."
+            placeholder="请教问题..."
             value={input}
             className="pl-4 pr-10 h-12 rounded-full bg-muted"
             onChange={e => {

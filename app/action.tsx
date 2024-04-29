@@ -1,3 +1,20 @@
+// filepath: app/action.tsx
+/**
+ * This file defines the main AI actions and states for the application.
+ *
+ * It exports an AI provider that wraps the application and provides access to the AI and UI states.
+ * The main function in this file is the `submit` function, which handles the submission of user input to the AI and processes the AI's response.
+ * It also manages the UI state during this process.
+ *
+ * The `submit` function uses several helper functions and utilities to process user input and generate responses.
+ * These include `inquire`, `researcher`, `taskManager`, and `querySuggestor` from the `@/lib/agents` module, and `writer` from the `@/lib/agents/writer` module.
+ *
+ * The `submit` function returns an object containing the ID of the submission, the current state of the UI, and whether the AI is currently generating a response.
+ *
+ * The initial states of the AI and UI are defined as empty arrays.
+ *
+ * @module app/action
+ */
 import {
   StreamableValue,
   createAI,

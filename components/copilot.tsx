@@ -1,3 +1,15 @@
+// file: /components/copilot.tsx
+/**
+ * This file defines a part of the chat interface for the application.
+ *
+ * It exports a `Copilot` component that takes an `inquiry` prop and returns a JSX element representing a part of the chat interface.
+ * The component handles user input and submission, and it also manages the state of the chat interface.
+ *
+ * The `handleInputChange`, `handleOptionChange`, `checkIfButtonShouldBeEnabled`, `updatedQuery`, `onFormSubmit`, and `handleSkip` functions are defined within the `Copilot` component.
+ * These functions handle various aspects of the chat interface, including input change, option change, button enablement, query update, form submission, and skipping.
+ *
+ * @module components/copilot
+ */
 'use client'
 
 import React, { useEffect, useState } from 'react'
@@ -87,7 +99,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
         <div className="flex items-center space-x-2">
           <Sparkles className="w-4 h-4" />
           <h5 className="text-muted-foreground text-xs truncate">
-            {`error: ${error}`}
+            {`错误: ${error}`}
           </h5>
         </div>
       </Card>
@@ -118,7 +130,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
             className={cn('w-4 h-4 flex-shrink-0', { 'animate-spin': pending })}
           />
           <p className="text-lg text-foreground text-semibold ml-2">
-            {data?.question}
+            {data?.question || '您的查询需要进一步说明。请选择以下选项或输入更多信息以帮助我更好地理解您的需求。'}
           </p>
         </div>
         <form onSubmit={onFormSubmit}>
@@ -139,7 +151,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
                   className="text-sm whitespace-nowrap pr-4"
                   htmlFor={option?.value}
                 >
-                  {option?.label}
+                  {option?.label || '选项'}
                 </label>
               </div>
             ))}
@@ -147,16 +159,16 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
           {data?.allowsInput && (
             <div className="mb-6 flex flex-col space-y-2 text-sm">
               <label className="text-muted-foreground" htmlFor="query">
-                {data?.inputLabel}
+                {data?.inputLabel || '如果无法从选项中选择合适的选项,您可以在此输入您的查询'}
               </label>
               <Input
-                type="text"
-                name="additional_query"
-                className="w-full"
-                id="query"
-                placeholder={data?.inputPlaceholder}
-                value={query}
-                onChange={handleInputChange}
+                  type="text"
+                  name="additional_query"
+                  className="w-full"
+                  id="query"
+                  placeholder={data?.inputPlaceholder || '例如: 严复作品风格'}
+                  value={query}
+                  onChange={handleInputChange}
               />
             </div>
           )}
@@ -168,11 +180,11 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
               disabled={pending}
             >
               <FastForward size={16} className="mr-1" />
-              Skip
+              跳过
             </Button>
             <Button type="submit" disabled={isButtonDisabled || pending}>
               <ArrowRight size={16} className="mr-1" />
-              Send
+              发送
             </Button>
           </div>
         </form>

@@ -1,3 +1,12 @@
+/**
+ * This file defines a search results display for the application.
+ *
+ * It exports a `SearchResults` component that manages the state of whether to display all search results or not.
+ * It also provides functionality to display a subset of the search results and a button to view more results.
+ * When the "View more" button is clicked, all search results are displayed.
+ *
+ * @module components/search-results
+ */
 'use client'
 
 import { useState } from 'react'

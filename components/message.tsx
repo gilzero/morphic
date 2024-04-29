@@ -1,3 +1,11 @@
+/**
+ * This file defines a message display for the application.
+ *
+ * It exports a `BotMessage` component that manages the state of the message content, handles the rendering of the message content with markdown, and controls the display of the message.
+ * It also provides functionality to handle streamable values and external links in the message content.
+ *
+ * @module components/message
+ */
 'use client'
 
 import { StreamableValue, useStreamableValue } from 'ai/rsc'

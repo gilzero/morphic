@@ -1,3 +1,11 @@
+/**
+ * This file defines a follow-up panel for the application.
+ *
+ * It exports a `FollowupPanel` component that manages the state of the follow-up input and handles the submission of new follow-up messages.
+ * It also provides functionality to clear the input field after a message is submitted.
+ *
+ * @module components/followup-panel
+ */
 'use client'
 
 import { useState } from 'react'
@@ -41,7 +49,7 @@ export function FollowupPanel() {
       <Input
         type="text"
         name="input"
-        placeholder="Ask a follow-up question..."
+        placeholder="请教后续问题..."
         value={input}
         className="pr-14 h-12"
         onChange={e => setInput(e.target.value)}

@@ -1,3 +1,16 @@
+// filepath: app/layout.tsx
+/**
+ * This file defines the root layout for the application.
+ *
+ * It exports a `RootLayout` component that takes a `children` prop and returns a JSX element representing the layout of the application.
+ * The layout includes a `ThemeProvider` that wraps the entire application, a `Header` and `Footer`, and the `children` components that are passed in.
+ * The `AI` provider from `./action` is also used to wrap the `children` components.
+ *
+ * The `metadata` and `viewport` constants are defined to set up the metadata and viewport settings for the application.
+ * The `fontSans` constant is defined using the `FontSans` function from `next/font/google` to set up a custom font for your application.
+ *
+ * @module app/layout
+ */
 import type { Metadata, Viewport } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { AI } from './action'
@@ -12,12 +25,12 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'Morphic'
+const title = 'Yanfu'
 const description =
-  'A fully open-source AI-powered answer engine with a generative UI.'
+  'Yanfu AI-powered answer engine with a generative UI.'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://morphic.sh'),
+  metadataBase: new URL('https://yanfu.weiming.ai/'),
   title,
   description,
   openGraph: {
@@ -28,7 +41,7 @@ export const metadata: Metadata = {
     title,
     description,
     card: 'summary_large_image',
-    creator: '@miiura'
+    creator: '@0'
   }
 }
 

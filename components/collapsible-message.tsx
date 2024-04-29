@@ -1,3 +1,11 @@
+/**
+ * This file defines a collapsible message for the application.
+ *
+ * It exports a `CollapsibleMessage` component that manages the state of the collapsible message, handles the opening and closing of the collapsible content, and controls the display of the collapsible message.
+ * It also provides functionality to render the message component when not collapsed.
+ *
+ * @module components/collapsible-message
+ */
 import React, { useEffect, useState } from 'react'
 import {
   Collapsible,

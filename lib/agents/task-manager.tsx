@@ -1,3 +1,14 @@
+// filepath: lib/agents/task-manager.tsx
+/**
+ * This file defines a `taskManager` function for the application.
+ *
+ * The `taskManager` function is used to decide whether an inquiry is required for the user input using the OpenAI SDK.
+ * It takes `messages` as a parameter, and returns the result of the `experimental_generateObject` method from the OpenAI SDK.
+ *
+ * The function calls the `experimental_generateObject` method from the OpenAI SDK, passing in a model, a system message, the messages, and a schema.
+ *
+ * @module lib/agents/task-manager
+ */
 import { ExperimentalMessage, experimental_generateObject } from 'ai'
 import { OpenAI } from '@ai-sdk/openai'
 import { nextActionSchema } from '../schema/next-action'

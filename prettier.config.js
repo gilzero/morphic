@@ -1,3 +1,8 @@
+/**
+ * This is a configuration file for Prettier, a code formatter.
+ * It specifies various rules that Prettier should follow when formatting the code.
+ * These rules include preferences for line endings, semicolons, quotes, indentation, trailing commas, and the order of import statements.
+ */
 /** @type {import('prettier').Config} */
 module.exports = {
   endOfLine: 'lf',
